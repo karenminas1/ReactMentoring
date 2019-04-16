@@ -1,0 +1,11 @@
+.app-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    border: 1px solid #000000;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}

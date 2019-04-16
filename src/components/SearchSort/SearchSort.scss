@@ -1,0 +1,19 @@
+.search-sort {
+    display: flex;
+    align-items: center;
+    color: #000000;
+    padding: 15px 95px;
+    background-color: #f8f4f4;
+}
+
+.sort-text {
+    margin-right: 10px; 
+}
+
+.sort-button {
+    margin: 0 15px;
+    cursor: pointer;
+    &:hover {
+        color: #ee4164;
+    }
+}

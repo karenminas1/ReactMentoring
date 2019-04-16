@@ -1,0 +1,15 @@
+.header {
+    width:100%;
+    background: url('../../images/headerBackground.jpg') repeat;
+
+    &-title {
+        color: #ee4164;
+        margin: 0 0 40px 0;
+    }
+}
+
+.transbox {
+    background-color: #000000;
+    opacity: 0.6;
+    padding: 15px 93px;
+}
