@@ -3,11 +3,8 @@ import './SearchSort.scss';
 
 class SearchSort extends React.Component {
     onClickk() {
-        this.props.parentState('ffff');
     }
     render() {
-
-        console.log(this.props)
        return (
         <div className="search-sort">
             <span>{ this.props.foundedMovie } movies found</span>

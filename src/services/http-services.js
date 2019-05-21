@@ -1,7 +1,8 @@
 
 export const getMovies = (searchBy, limit) => {
     return fetch (`https://reactjs-cdp.herokuapp.com/movies?searchBy=${searchBy}&limit=${limit}`)
-        .then(res => res.json());
+        .then(res => res.json())
+        .catch(err => console.log(err))
 };
 
   
