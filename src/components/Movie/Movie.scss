@@ -1,0 +1,45 @@
+.movie-container-wrapper {
+    position: relative;
+
+    .search-button {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 5px 15px;
+        background-color: #ffffff;
+        color: #ee4164;
+        text-decoration: none;
+    }
+
+}
+.movie-container {
+    display: flex;
+    color: #ffffff;
+
+    &-image-wrapper {
+        width: 30%;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    &-description {
+        width: 70%;
+        padding: 0 25px;
+    }
+
+    &-title {
+        color: #ee4164;
+        margin-bottom: 0px;
+    }
+
+    &-year {
+        margin: 5px 0 10px 0;
+
+        span {
+            font-weight: bold;
+            margin-right: 10px;
+        }
+    }
+}

@@ -11,6 +11,7 @@ module.exports = env => {
         output: {
             filename: 'bundle.js',
             path: path.join(__dirname, 'dist'),
+            publicPath: '/',
         },
 
         module: {
@@ -50,6 +51,10 @@ module.exports = env => {
                     }]
                 }
             ]
+        },
+
+        devServer: {
+            historyApiFallback: true,
         },
 
         resolve: {
