@@ -7,8 +7,8 @@ const api = axios.create({
 
   
 
-export const getMovies = (searchBy, limit, sortBy) => {
-    return api.get(`/movies?searchBy=${searchBy}&limit=${limit}&sortBy=${sortBy}&sortOrder=desc`)
+export const getMovies = (searchNmae='', searchBy='', limit='', sortBy='', sortOrder='desc') => {
+    return api.get(`/movies?search=${ searchNmae }&searchBy=${searchBy}&limit=${limit}&sortBy=${sortBy}&sortOrder=${sortOrder}`)
         .then(res => res.data)
         .catch(err => console.log(err))
 };

@@ -1,7 +1,25 @@
 import React from "react";
 import './Search.scss';
 
+import { getMovies } from '../../services/http-services';
+
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import { foundMovies } from '../../store/actions/index';
 class Search extends React.Component {
+
+  constructor() {
+    super();
+    this.searchMovie = this.searchMovie.bind(this);
+  }
+
+  searchMovie(e) {
+    getMovies(e.target.value, 'title')
+      .then(res => {
+        this.props.foundMovies(res.data)
+      })
+  }
+
 
   render() {
     return (
@@ -9,7 +27,7 @@ class Search extends React.Component {
       <div className="search">
         <div>
           <p className="search-input-label">FIND YOUR MOVIE</p>
-          <input className="search-input" id="search-movie" type="text" placeholder="Enter movie name"></input>
+          <input onKeyUp={this.searchMovie} className="search-input" id="search-movie" type="text" placeholder="Enter movie name"></input>
         </div>
         <div className="search-buttons-box">
           <div>search by</div>
@@ -23,5 +41,8 @@ class Search extends React.Component {
   }
 }
 
+function matchDispatchToProps(dispatch) {
+  return bindActionCreators({ foundMovies: foundMovies }, dispatch);
+}
 
-export default Search;
+export default connect(null, matchDispatchToProps)(Search);

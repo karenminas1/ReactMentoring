@@ -2,34 +2,21 @@ import React from "react";
 import { BrowserRouter as Router, Link } from "react-router-dom";
 import './Movie.scss';
 
-import { getMovie } from '../../services/http-services';
+import { connect } from 'react-redux';
 
 class Movie extends React.Component {
 
 
 constructor(props) {
     super(props);
-
-    this.state = {
-        movie: {},
-    };
     }
     
-    componentDidMount() {
-        const { match } = this.props;
-        getMovie(match.params.id)
-            .then(res => this.setState({
-                movie: res,
-            }))
-            .catch(err => console.log(err))
-    }
-
     getYear(date) {
         return new Date(date).getFullYear();
     }
 
   render() {
-    const { title, poster_path, release_date, overview } = this.state.movie;
+    const { title, poster_path, release_date, overview } = this.props.activeMovie || {};
     const getYear = this.getYear(release_date);
 
     return (
@@ -52,4 +39,10 @@ constructor(props) {
 }
 
 
-export default Movie;
+function mapStateToProps(state) {
+    return {
+        activeMovie: state.activeMovieReducers
+    }
+}
+
+export default connect(mapStateToProps)(Movie);
