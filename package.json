@@ -23,7 +23,7 @@
     "babel-preset-es2015": "^6.24.1",
     "express": "^4.16.4",
     "jest": "^24.8.0",
-    "node-sass": "^4.11.0",
+    "node-sass": "^4.13.1",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "react-redux": "^6.0.1",
